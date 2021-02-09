@@ -17,5 +17,8 @@
   "scripts": {
     "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt build"
   },
-  "name": "neural-link"
+  "name": "neural-link",
+  "engines": {
+    "node": "14.x"
+  }
 }
