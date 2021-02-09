@@ -6,7 +6,7 @@ var app = express();
 const fs = require('fs');
 const path = require('path');
 
-// app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/public"));
 
 // path.join(__dirname + '/js');
 const jsPath = path.join(__dirname, '/js');
