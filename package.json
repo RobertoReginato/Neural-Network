@@ -17,8 +17,6 @@
   "scripts": {
     "start": "node app",
     "postinstall": "./node_modules/grunt-cli/bin/grunt build"
-    // "build": "grunt build",
-    // "heroku-postbuild": "grunt build" // this will be run on Heroku
   },
   "name": "neural-link",
   "engines": {
