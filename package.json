@@ -15,9 +15,9 @@
     "underscore": "^1.8.3"
   },
   "scripts": {
-    "start": "node app.js",
-    "build": "grunt build",
-    "heroku-postbuild": "grunt build" // this will be run on Heroku
+    "start": "node app.js"
+    // "build": "grunt build",
+    // "heroku-postbuild": "grunt build" // this will be run on Heroku
   },
   "name": "neural-link",
   "engines": {
