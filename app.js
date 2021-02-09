@@ -5,11 +5,8 @@ var app = express();
 
 const fs = require('fs');
 const path = require('path');
-const dirPath = path.join(__dirname, '/pictures');
 
-fs.mkdirSync(dirPath);
-
-app.use(express.static(__dirname + "/public"));
+// app.use(express.static(__dirname + "/public"));
 
 // path.join(__dirname + '/js');
 const jsPath = path.join(__dirname, '/js');
