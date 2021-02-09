@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "node app",
-    "postinstall": "./node_modules/grunt-cli/bin/grunt build"
+    "postinstall": "/node_modules/grunt-cli/bin/grunt build"
   },
   "name": "neural-link",
   "engines": {
