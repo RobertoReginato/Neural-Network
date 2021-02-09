@@ -15,7 +15,7 @@
     "underscore": "^1.8.3"
   },
   "scripts": {
-    "start": "node main.js"
+    "start": "node js/main.js"
  },
   "name": "Neural-Network"
 }
