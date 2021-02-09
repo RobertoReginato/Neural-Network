@@ -57,7 +57,8 @@ module.exports = function ( grunt ) {
 		connect: {
 			server: {
 				options: {
-					port: process.env.PORT || 9001,
+					// port: process.env.PORT || 9001,
+					port: 9001,
 					base: '.',
 				}
 			}
