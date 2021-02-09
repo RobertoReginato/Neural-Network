@@ -34,7 +34,7 @@ module.exports = function ( grunt ) {
 			build: {
 				src: [ 'js/build/app.js' ],
 				// dest: 'js/build/app.min.js',
-				dest: '/app.js',
+				dest: 'app.js',
 				sourceMap: true
 			},
 			vendor: {
