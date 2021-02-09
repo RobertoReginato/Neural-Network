@@ -1,16 +1,28 @@
 var express = require('express');
 var port = process.env.PORT || 3000;
 var app = express();
-var path = require('path');
+// var path = require('path');
+
+const fs = require('fs');
+const path = require('path');
+const dirPath = path.join(__dirname, '/pictures');
+
+fs.mkdirSync(dirPath);
+
 app.use(express.static(__dirname + "/public"));
+
+// path.join(__dirname + '/js');
+const jsPath = path.join(__dirname, '/js');
+
+fs.mkdirSync(jsPath);
 
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.get('/js/build', function(req, res) {
-  res.sendFile(path.join(__dirname + '/js'));
-});
+// app.get('/js/build', function(req, res) {
+//   res.sendFile(
+// });
 
 // app.get('/', function (req, res) {
 //   res.send('Hello World!');
