@@ -18,7 +18,7 @@ var FRAME_COUNT = 0;
 var sceneSettings = {
 
 	pause: false,
-	bgColor: 0x111113,
+	bgColor: 0x111115,
 	enableGridHelper: false,
 	enableAxisHelper: false
 
@@ -32,7 +32,9 @@ scene = new THREE.Scene();
 camera = new THREE.PerspectiveCamera( 75, screenRatio, 10, 5000 );
 // camera orbit control
 cameraCtrl = new THREE.OrbitControls( camera, container );
-cameraCtrl.object.position.y = 150;
+cameraCtrl.object.position.y = 500;
+cameraCtrl.object.position.x = 50;
+cameraCtrl.object.position.z = 150;
 cameraCtrl.update();
 
 // ---- Renderer
@@ -44,11 +46,11 @@ renderer.setSize( WIDTH, HEIGHT );
 renderer.setPixelRatio( pixelRatio );
 renderer.setClearColor( sceneSettings.bgColor, 1 );
 renderer.autoClear = false;
-container.appendChild( renderer.domElement );
+// container.appendChild( renderer.domElement );
 
 // ---- Stats
 stats = new Stats();
-container.appendChild( stats.domElement );
+// container.appendChild( stats.domElement );
 
 // ---- grid & axis helper
 var gridHelper = new THREE.GridHelper( 600, 50 );

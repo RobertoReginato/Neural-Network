@@ -122,7 +122,9 @@ function ParticlePool( poolSize ) {
 
 	this.offScreenPos = new THREE.Vector3( 9999, 9999, 9999 );
 
-	this.pColor = '#ffffff';
+	this.pColor = '#bb2a2a';
+	this.pColor = '#D9EBF9';
+	
 	this.pSize = 0.6;
 
 	for ( var ii = 0; ii < this.poolSize; ii++ ) {
@@ -306,7 +308,9 @@ function NeuralNetwork() {
 
 	// axon
 	this.axonOpacityMultiplier = 0.5;
-	this.axonColor = '#ffffff';
+	this.axonColor = '#e696ff'; // ***
+	this.axonColor = '#D9EBF9'; // ***
+	
 	this.axonGeom = new THREE.BufferGeometry();
 	this.axonPositions = [];
 	this.axonIndices = [];
@@ -333,7 +337,8 @@ function NeuralNetwork() {
 	// neuron
 	this.neuronSizeMultiplier = 1.0;
 	this.spriteTextureNeuron = TEXTURES.electric;
-	this.neuronColor = '#ffffff';
+	this.neuronColor = '#a4dfff'; // ***
+	this.neuronColor = '#D9EBF9'; // ***
 	this.neuronOpacity = 0.75;
 	this.neuronsGeom = new THREE.Geometry();
 
@@ -415,7 +420,7 @@ NeuralNetwork.prototype.initNeurons = function ( inputVertices ) {
 
 	// set neuron attributes value
 	for ( i = 0; i < this.components.neurons.length; i++ ) {
-		this.neuronAttributes.color.value[ i ] = new THREE.Color( '#ffffff' ); // initial neuron color
+		this.neuronAttributes.color.value[ i ] = new THREE.Color( '#f0f0ff' ); // initial neuron color
 		this.neuronAttributes.size.value[ i ] = THREE.Math.randFloat( 0.75, 3.0 ); // initial neuron size
 	}
 
@@ -711,7 +716,7 @@ var FRAME_COUNT = 0;
 var sceneSettings = {
 
 	pause: false,
-	bgColor: 0x111113,
+	bgColor: 0x111115,
 	enableGridHelper: false,
 	enableAxisHelper: false
 
@@ -725,7 +730,10 @@ scene = new THREE.Scene();
 camera = new THREE.PerspectiveCamera( 75, screenRatio, 10, 5000 );
 // camera orbit control
 cameraCtrl = new THREE.OrbitControls( camera, container );
-cameraCtrl.object.position.y = 150;
+// cameraCtrl.object.position.y = 150;
+cameraCtrl.object.position.y = -40;
+// cameraCtrl.object.position.x = 500;
+cameraCtrl.object.position.z = 140;
 cameraCtrl.update();
 
 // ---- Renderer
@@ -741,7 +749,7 @@ container.appendChild( renderer.domElement );
 
 // ---- Stats
 stats = new Stats();
-container.appendChild( stats.domElement );
+// container.appendChild( stats.domElement );
 
 // ---- grid & axis helper
 var gridHelper = new THREE.GridHelper( 600, 50 );
@@ -819,8 +827,8 @@ function initGui() {
 	gui_settings.addColor( neuralNet, 'axonColor' ).name( 'Axon Color' );
 	gui_settings.addColor( sceneSettings, 'bgColor' ).name( 'Background' );
 
-	gui_info.open();
-	gui_settings.open();
+	// gui_info.open();
+	// gui_settings.open();
 
 	for ( var i = 0; i < gui_settings.__controllers.length; i++ ) {
 		gui_settings.__controllers[ i ].onChange( updateNeuralNetworkSettings );
@@ -898,6 +906,13 @@ window.addEventListener( 'keypress', function ( event ) {
 $( function () {
 	var timerID;
 	$( window ).resize( function () {
+		clearTimeout( timerID );
+		timerID = setTimeout( function () {
+			onWindowResize();
+		}, 250 );
+	} );
+
+	$( window ).load( function () {
 		clearTimeout( timerID );
 		timerID = setTimeout( function () {
 			onWindowResize();
