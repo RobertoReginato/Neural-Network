@@ -15,8 +15,7 @@
     "underscore": "^1.8.3"
   },
   "scripts": {
-    "start": "node app",
-    "postinstall": "/node_modules/grunt-cli/bin/grunt build"
+    "start": "node app"
   },
   "name": "neural-link",
   "engines": {
