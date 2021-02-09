@@ -15,7 +15,7 @@
     "underscore": "^1.8.3"
   },
   "scripts": {
-    "start": "node js/main.js"
- },
-  "name": "Neural-Network"
+    "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt build"
+  },
+  "name": "neural-link"
 }
