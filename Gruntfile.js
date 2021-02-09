@@ -33,8 +33,7 @@ module.exports = function ( grunt ) {
 			options: {},
 			build: {
 				src: [ 'js/build/app.js' ],
-				// dest: 'js/build/app.min.js',
-				dest: 'app.js',
+				dest: 'js/build/app.min.js',
 				sourceMap: true
 			},
 			vendor: {
@@ -58,8 +57,7 @@ module.exports = function ( grunt ) {
 		connect: {
 			server: {
 				options: {
-					// port: process.env.PORT || 9001,
-					port: 9001,
+					port: process.env.PORT || 9001,
 					base: '.',
 				}
 			}
