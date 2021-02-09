@@ -15,7 +15,9 @@
     "underscore": "^1.8.3"
   },
   "scripts": {
-    "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt build"
+    "start": "node app.js",
+    "build": "grunt build",
+    "heroku-postbuild": "grunt build" // this will be run on Heroku
   },
   "name": "neural-link",
   "engines": {
