@@ -15,7 +15,8 @@
     "underscore": "^1.8.3"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node app",
+    "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt build"
     // "build": "grunt build",
     // "heroku-postbuild": "grunt build" // this will be run on Heroku
   },
